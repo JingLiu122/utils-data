@@ -10,6 +10,7 @@ On the root directory:
 node server.js
 ```
 On another terminal:
+
 Under the client directory:
 ```
 npm start
