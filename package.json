@@ -1,0 +1,27 @@
+{
+  "name": "utils_data",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/jingliu/utils_data.git"
+  },
+  "author": "Steve Mu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/jingliu/utils_data/issues"
+  },
+  "homepage": "https://gitlab.com/jingliu/utils_data#README",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
+  }
+}

@@ -1,15 +1,17 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const router = express.Router();
-
+// const mongoose = require('mongoose');
+// const router = express.Router();
 const app = express();
-
 var port = process.env.PORT || 3000;  
+var bodyParser = require('body-parser')
+var fs = require('fs');
+let cors = require("cors");
+app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/utilData-dev', {
-	useNewUrlParser: true
-});
-var Util = require('./app/models/UtilData');
+// mongoose.connect('mongodb://localhost:27017/utilData-dev', {
+// 	useNewUrlParser: true
+// });
+// var Util = require('./app/models/UtilData');
 
 //-------------------------------------
 // reading a JSON file
@@ -37,16 +39,40 @@ utility.sort((a, b) => {
 });
 //-------------------------------------
 
-router.use((req, res, next) => {
-	console.log('something is happening');
-	next();
+// router.use((req, res, next) => {
+// 	console.log('something is happening');
+// 	next();
+// });
+app.use(bodyParser.json());
+// app.use(() => {
+// 	console.log('here');
+// })
+
+app.get('/', (req, res) => {
+	res.json({});
+	// res.json(utility);
 });
 
-router.get('/', (req, res) => {
-	res.json(utility);
-});
+app.post("/sum", (req, res) => {
+	console.log(req.body);
+	let obj = req.body;
+	let {num1, num2} = obj;
+	let sum = parseInt(num1) + parseInt(num2);
+	return res.json({result: sum});
+})
 
-app.use('/api', router);
+app.get("/data", (req, res) => {
+	// read json
+	// parse it
+	// send it back
+	var contents = fs.readFileSync('utilData_1.json', 'utf8');
+	let obj = JSON.parse(contents);
+	// console.log(obj);
+	return res.json(obj);
+
+})
+
+// app.use('/api', router);
 
 app.listen(port, () => {
 	console.log(`Server started on port ${port}`);
