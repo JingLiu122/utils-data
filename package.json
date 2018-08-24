@@ -1,7 +1,7 @@
 {
   "name": "utils_data",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "description": "A app to show solar utility data",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,17 +11,17 @@
     "type": "git",
     "url": "git+ssh://git@gitlab.com/jingliu/utils_data.git"
   },
-  "author": "Steve Mu",
-  "license": "MIT",
+  "author": "Jing",
+  "license": "ISC",
   "bugs": {
     "url": "https://gitlab.com/jingliu/utils_data/issues"
   },
-  "homepage": "https://gitlab.com/jingliu/utils_data#README",
+  "homepage": "https://gitlab.com/jingliu/utils_data#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cor": "0.0.0",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "file-system": "^2.2.2"
   }
 }
